@@ -2,8 +2,8 @@ services:
   rebtel.librarymanagement.api:
     image: ${DOCKER_REGISTRY-}rebtellibrarymanagementapi
     build:
-      context: .
-      dockerfile: src/Rebtel.LibraryManagement.Api/Dockerfile
+      context: src
+      dockerfile: Rebtel.LibraryManagement.Api/Dockerfile
     depends_on:
       - rebtel.librarymanagement.grpc
     environment:
@@ -26,8 +26,8 @@ services:
   rebtel.librarymanagement.grpc:
     image: ${DOCKER_REGISTRY-}rebtellibrarymanagementgrpc
     build:
-      context: .
-      dockerfile: src/Rebtel.LibraryManagement.GRPC/Dockerfile
+      context: src
+      dockerfile: Rebtel.LibraryManagement.GRPC/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8088
