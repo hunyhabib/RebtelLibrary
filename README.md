@@ -3,16 +3,14 @@
 ## How to Run Library Management
 
 ### Prerequisites
+
 - [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 - [Docker](https://www.docker.com/get-started)
 
 ### Running with Docker Compose
-1. Open a terminal in the `LibraryManagement` directory.
-2. Run the following command:
-	```bash
-	docker-compose up --build
-	```
-3. This will start:
+
+1. Open Visual Studio And Run The Docker Compose.
+2. This will start:
 	- API service (`rebtel.librarymanagement.api`) on ports 8080 (HTTP) and 8081 (HTTPS)
 	- GRPC service (`rebtel.librarymanagement.grpc`) on ports 8088 (HTTP) and 8089 (HTTPS)
 	- SQL Server (`sqldata`) on port 1433
