@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option csharp_namespace = "Rebtel.LibraryManagement.Contracts";
+
+package users.v1;
+
+import "google/protobuf/timestamp.proto";
+
+// The users service definition.
+service UsersService {
+  // Gets the most borrowing users within a date range
+  rpc GetMostBorrowingUsers (GetMostBorrowingUsersRequest) returns (GetMostBorrowingUsersResponse);
+  // Gets the reading pace for a specific user
+  rpc GetUserReadingPace (GetUserReadingPaceRequest) returns (GetUserReadingPaceResponse);
+}
+
+// Request message for getting most borrowing users
+message GetMostBorrowingUsersRequest {
+  // Start time of the date range
+  google.protobuf.Timestamp start_time = 1;
+  // End time of the date range
+  google.protobuf.Timestamp end_time = 2;
+  // Number of users to return (defaults to 3 if not specified)
+  int32 count = 3;
+}
+
+// Response message containing the list of most borrowing users
+message GetMostBorrowingUsersResponse {
+  // List of most borrowing users
+  repeated UserDto users = 1;
+}
+
+// Request message for getting user reading pace
+message GetUserReadingPaceRequest {
+  // ID of the user
+  string user_id = 1;
+  string book_id = 2;
+}
+
+// Response message for user reading pace
+message GetUserReadingPaceResponse {
+  // Reading pace (pages per day)
+  optional int32 pace = 1;
+}
+
+// User data transfer object
+message UserDto {
+  // Unique identifier for the user
+  string id = 1;
+  // Name of the user
+  string name = 2;
+  // Email address
+  string email = 3;
+  // Phone number
+  string phone_number = 4;
+  // Date when user became a member
+  google.protobuf.Timestamp membership_date = 5;
+}

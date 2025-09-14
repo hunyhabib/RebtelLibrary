@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.Application", "src\Rebtel.LibraryManagement.Application\Rebtel.LibraryManagement.Application.csproj", "{8BC1FBF9-B135-48E0-BAFA-3DEF8F0F8218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.Domain", "src\Rebtel.LibraryManagement.Domain\Rebtel.LibraryManagement.Domain.csproj", "{BF2CB1F3-C562-4BF4-8AAB-1122BDA8BFEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.Infrastructure", "src\Rebtel.LibraryManagement.Infrastructure\Rebtel.LibraryManagement.Infrastructure.csproj", "{2C85C2C3-7354-4DEA-ADDF-EFDB80041874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.Api", "src\Rebtel.LibraryManagement.Api\Rebtel.LibraryManagement.Api.csproj", "{026985A6-8080-B653-5483-5DDE07B8597D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.GRPC", "src\Rebtel.LibraryManagement.GRPC\Rebtel.LibraryManagement.GRPC.csproj", "{BC978BB3-9630-4E38-9EBD-959D42895356}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.DTOs", "src\Rebtel.LibraryManagement.DTOs\Rebtel.LibraryManagement.DTOs.csproj", "{47725FA6-CAA9-47FC-BD3A-3B34FB20CDE1}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.UnitTests", "tests\Rebtel.LibraryManagement.UnitTests\Rebtel.LibraryManagement.UnitTests.csproj", "{47A8418E-D2AC-4D76-9241-557554818A3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.Contracts", "src\Rebtel.LibraryManagement.Contracts\Rebtel.LibraryManagement.Contracts.csproj", "{A88614C6-BAEE-77A4-D58F-BC05363DBA14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebtel.LibraryManagement.IntegrationTests", "tests\Rebtel.LibraryManagement.IntegrationTests\Rebtel.LibraryManagement.IntegrationTests.csproj", "{BCBF0A81-4B5B-482D-9205-9E8BBF8CC89F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BC1FBF9-B135-48E0-BAFA-3DEF8F0F8218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC1FBF9-B135-48E0-BAFA-3DEF8F0F8218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC1FBF9-B135-48E0-BAFA-3DEF8F0F8218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC1FBF9-B135-48E0-BAFA-3DEF8F0F8218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2CB1F3-C562-4BF4-8AAB-1122BDA8BFEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2CB1F3-C562-4BF4-8AAB-1122BDA8BFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2CB1F3-C562-4BF4-8AAB-1122BDA8BFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2CB1F3-C562-4BF4-8AAB-1122BDA8BFEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C85C2C3-7354-4DEA-ADDF-EFDB80041874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C85C2C3-7354-4DEA-ADDF-EFDB80041874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C85C2C3-7354-4DEA-ADDF-EFDB80041874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C85C2C3-7354-4DEA-ADDF-EFDB80041874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{026985A6-8080-B653-5483-5DDE07B8597D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{026985A6-8080-B653-5483-5DDE07B8597D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{026985A6-8080-B653-5483-5DDE07B8597D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{026985A6-8080-B653-5483-5DDE07B8597D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC978BB3-9630-4E38-9EBD-959D42895356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC978BB3-9630-4E38-9EBD-959D42895356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC978BB3-9630-4E38-9EBD-959D42895356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC978BB3-9630-4E38-9EBD-959D42895356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47725FA6-CAA9-47FC-BD3A-3B34FB20CDE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47725FA6-CAA9-47FC-BD3A-3B34FB20CDE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47725FA6-CAA9-47FC-BD3A-3B34FB20CDE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47725FA6-CAA9-47FC-BD3A-3B34FB20CDE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47A8418E-D2AC-4D76-9241-557554818A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A8418E-D2AC-4D76-9241-557554818A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A8418E-D2AC-4D76-9241-557554818A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A8418E-D2AC-4D76-9241-557554818A3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88614C6-BAEE-77A4-D58F-BC05363DBA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88614C6-BAEE-77A4-D58F-BC05363DBA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88614C6-BAEE-77A4-D58F-BC05363DBA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88614C6-BAEE-77A4-D58F-BC05363DBA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBF0A81-4B5B-482D-9205-9E8BBF8CC89F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBF0A81-4B5B-482D-9205-9E8BBF8CC89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBF0A81-4B5B-482D-9205-9E8BBF8CC89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBF0A81-4B5B-482D-9205-9E8BBF8CC89F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47A8418E-D2AC-4D76-9241-557554818A3A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BCBF0A81-4B5B-482D-9205-9E8BBF8CC89F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18B0CCEE-05A5-4919-BCBE-C15567C3432A}
+	EndGlobalSection
+EndGlobal

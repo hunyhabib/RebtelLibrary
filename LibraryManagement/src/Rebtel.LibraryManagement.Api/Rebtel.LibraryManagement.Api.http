@@ -1,0 +1,6 @@
+@Rebtel.LibraryManagement.Api_HostAddress = http://localhost:5174
+
+GET {{Rebtel.LibraryManagement.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

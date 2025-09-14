@@ -1,0 +1,62 @@
+services:
+  rebtel.librarymanagement.api:
+    image: ${DOCKER_REGISTRY-}rebtellibrarymanagementapi
+    build:
+      context: .
+      dockerfile: src/Rebtel.LibraryManagement.Api/Dockerfile
+    depends_on:
+      - rebtel.librarymanagement.grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - LibraryApiURL=http://rebtel.librarymanagement.grpc:8088
+    ports:
+      - "8080"
+      - "8081"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+  
+  rebtel.librarymanagement.grpc:
+    image: ${DOCKER_REGISTRY-}rebtellibrarymanagementgrpc
+    build:
+      context: .
+      dockerfile: src/Rebtel.LibraryManagement.GRPC/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8088
+      - ASPNETCORE_HTTPS_PORTS=8089
+      - ConnectionStrings__LibraryManagementDB=Server=sqldata;Initial Catalog=LibraryManagementDB;User Id=sa;Password=P@ssword123!!!;TrustServerCertificate=true;Encrypt=false
+    ports:
+      - "8088"
+      - "8089"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8088/health"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+    depends_on:
+       - sqldata
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - SA_PASSWORD=P@ssword123!!!
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+        - sqlvolume:/var/opt/mssql
+
+volumes:
+    sqlvolume:

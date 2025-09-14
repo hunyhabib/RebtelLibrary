@@ -1,0 +1,12 @@
+global using Xunit;
+global using Moq;
+global using FluentAssertions;
+global using AutoMapper;
+global using Microsoft.EntityFrameworkCore;
+global using Rebtel.LibraryManagement.Domain.Aggregates;
+global using Rebtel.LibraryManagement.Domain.Repositories;
+global using Rebtel.LibraryManagement.DTOs;
+global using Rebtel.LibraryManagement.Infrastructure;
+global using Rebtel.LibraryManagement.Application.Queries.Books.GetMostBorrowedBooks;
+global using Rebtel.LibraryManagement.Application.Queries.Books.GetCommonBorrowedBooks;
+global using Rebtel.LibraryManagement.Application.Queries.Users.GetMostBorrowingUser;
