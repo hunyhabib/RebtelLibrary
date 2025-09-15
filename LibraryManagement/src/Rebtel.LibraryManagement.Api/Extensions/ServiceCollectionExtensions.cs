@@ -1,8 +1,10 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
+using Rebtel.LibraryManagement.Api.ExceptionHandlers;
 using Rebtel.LibraryManagement.Api.Profiles;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -20,11 +22,14 @@ namespace Rebtel.LibraryManagement.Api.Extensions
         {
             // Register application services here
             services.AddGrpc();
-            services.AddAutoMapper(typeof(ProtoToDtoProfile));
+            services.AddAutoMapper(t => t.AddMaps(typeof(ProtoToDtoProfile).Assembly));
             services.AddRebtelOpenTelemetry();
             services.AddHealthChecks();
             services.AddProblemDetails();
             services.AddEndpointsApiExplorer();
+            
+            // Add exception handlers
+            services.AddExceptionHandler<GrpcExceptionHandler>();
             
             // Add API versioning
             services.AddApiVersioning(opt =>
@@ -49,7 +54,7 @@ namespace Rebtel.LibraryManagement.Api.Extensions
 
             services.AddGrpcClient<Contracts.UsersService.UsersServiceClient>(o =>
             {
-                o.Address = new Uri(configuration["LibraryApiUrl"]!); 
+                o.Address = new Uri(configuration["LibraryApiUrl"]!);
             });
 
             return services;

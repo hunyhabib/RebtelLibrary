@@ -74,8 +74,9 @@ namespace Rebtel.LibraryManagement.GRPC.Services
                 if (request == null)
                     throw new RpcException(new Status(StatusCode.InvalidArgument, "Request cannot be null"));
 
-
-                var query = new Application.Queries.Users.GetUserReadingPace.GetUserReadingPaceQuery(Guid.Parse(request.UserId), Guid.Parse(request.BookId));
+                var userIdParsed = Guid.TryParse(request.UserId, out var userId);
+                var bookIdParsed = Guid.TryParse(request.BookId, out var bookId);
+                var query = new Application.Queries.Users.GetUserReadingPace.GetUserReadingPaceQuery(userId, bookId);
                 var result = await mediator.Send(query, context.CancellationToken);
 
                 var response = new GetUserReadingPaceResponse
@@ -115,5 +116,5 @@ namespace Rebtel.LibraryManagement.GRPC.Services
                 PhoneNumber = userDto.PhoneNumber ?? string.Empty,
                 MembershipDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(userDto.MembershipDate.ToUniversalTime())
             };
-}
+    }
 }

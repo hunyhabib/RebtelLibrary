@@ -11,5 +11,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.yml" />
+    <None Include="docs\GRPC_EXCEPTION_HANDLING.md" />
   </ItemGroup>
 </Project>

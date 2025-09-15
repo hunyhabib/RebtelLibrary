@@ -68,7 +68,8 @@ namespace Rebtel.LibraryManagement.GRPC.Services
                 if (request == null)
                     throw new RpcException(new Status(StatusCode.InvalidArgument, "Request cannot be null"));
 
-                var result = await mediator.Send(new Application.Queries.Books.GetCommonBorrowedBooks.GetCommonBorrowedBooksQuery(Guid.Parse(request.BookId), request.Count), context.CancellationToken);
+                var bookIdGuid = Guid.TryParse(request.BookId, out var bookId);
+                var result = await mediator.Send(new Application.Queries.Books.GetCommonBorrowedBooks.GetCommonBorrowedBooksQuery(bookId, request.Count), context.CancellationToken);
 
                 var response = new GetCommonBorrowedBooksResponse();
                 foreach (var bookDto in result)
